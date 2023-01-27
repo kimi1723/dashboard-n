@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 112.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: hsl(226deg, 43%, 10%);
+  font-family: "Rubik", sans-serif;
+  padding: 4em 1em 1em;
+}
+
+.header-card {
+  position: relative;
+  min-height: 160px;
+  width: clamp(230px, 100%, 320px);
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 12px;
+}
+.header-card-body {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 12px;
+}
+.header-card-body__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  padding-left: 1em;
+  padding-right: 1.5em;
+}
+.header-card-body__pfp {
+  width: 60px;
+  border: 3px solid hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+}
+.header-card-body__title {
+  font-size: 0.8rem;
+  color: hsl(236deg, 100%, 87%);
+  font-weight: 300;
+}
+.header-card-body__title p {
+  margin-top: 0.2em;
+  font-size: 1.2rem;
+  color: hsl(0deg, 0%, 100%);
+}
+.header-card__time-periods {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: 160px;
+  height: 100%;
+  padding: 1em 1.5em;
+}
+.header-card__button {
+  font-size: 0.9rem;
+  color: hsl(235deg, 45%, 61%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.header-card__button:hover, .header-card__button:focus, .header-card__button:active {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.main {
+  width: 100%;
+  max-width: 900px;
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.activities__work {
+  background-color: hsl(15deg, 100%, 70%);
+  background-image: url(/images/icon-work.svg);
+}
+.activities__play {
+  background-color: hsl(195deg, 74%, 62%);
+  background-image: url(/images/icon-play.svg);
+}
+.activities__study {
+  background-color: hsl(348deg, 100%, 68%);
+  background-image: url(/images/icon-study.svg);
+}
+.activities__exercise {
+  background-color: hsl(145deg, 58%, 55%);
+  background-image: url(/images/icon-exercise.svg);
+}
+.activities__social {
+  background-color: hsl(264deg, 64%, 52%);
+  background-image: url(/images/icon-social.svg);
+}
+.activities__self-care {
+  background-color: hsl(43deg, 84%, 65%);
+  background-image: url(/images/icon-self-care.svg);
+}
+.activities-card {
+  position: relative;
+  margin-top: 1em;
+  min-height: 160px;
+  width: clamp(230px, 100%, 320px);
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-position: 95% -5%;
+}
+.activities-card__body {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em 1em;
+  height: 75%;
+  width: 100%;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 10px;
+  color: hsl(0deg, 0%, 100%);
+}
+.activities-card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activities-card__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  height: 50px;
+}
+.activities-card__text p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.activities-card__text p:last-of-type {
+  font-size: 0.8rem;
+  color: hsl(236deg, 100%, 87%);
+}
+
+.attribution {
+  margin-top: 2em;
+  font-size: 0.5rem;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.attribution a:hover {
+  color: hsl(236deg, 100%, 87%);
+}
+
+@media (max-width: 280px) {
+  .header-card-body__heading {
+    padding: 0;
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .header-card-body__heading {
+    padding: 0 0.5em;
+  }
+}
+@media (min-width: 996px) {
+  body {
+    padding: 0 7em;
+  }
+  .activities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5em;
+  }
+  .activities .header-card {
+    grid-row: 1/3;
+    height: 100%;
+    width: 100%;
+    min-width: 220px;
+  }
+  .activities .header-card-body {
+    height: 70%;
+  }
+  .activities .header-card-body__heading {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  .activities .header-card-body__title {
+    padding-bottom: 2em;
+  }
+  .activities .header-card-body__title p {
+    font-size: 2rem;
+  }
+  .activities .header-card__time-periods {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .activities .header-card__button {
+    padding: 0.7em 0 0.3em;
+    font-size: 0.8rem;
+  }
+  .activities-card {
+    height: 100%;
+    min-height: 180px;
+    width: 100%;
+    min-width: 180px;
+    margin: 0;
+  }
+  .activities-card:nth-of-type(-n + 3) {
+    grid-row: 1/2;
+  }
+  .activities-card:nth-of-type(n + 4) {
+    grid-row: 2/3;
+  }
+  .activities-card:nth-of-type(1), .activities-card:nth-of-type(4) {
+    grid-column: 2/3;
+  }
+  .activities-card:nth-of-type(2), .activities-card:nth-of-type(5) {
+    grid-column: 3/4;
+  }
+  .activities-card:nth-of-type(3), .activities-card:nth-of-type(6) {
+    grid-column: 4/5;
+  }
+  .activities-card__body {
+    padding-top: 1em;
+    height: 80%;
+  }
+  .activities-card__title {
+    font-size: 0.6rem;
+  }
+  .activities-card__title img {
+    width: 15px;
+    cursor: pointer;
+  }
+  .activities-card__text {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .activities-card__text p:first-of-type {
+    padding-left: 0.2em;
+    font-size: 2rem;
+  }
+  .activities-card__text p:last-of-type {
+    font-size: 0.6rem;
+    padding: 1em 0;
+  }
+  .attribution {
+    position: absolute;
+    bottom: 3em;
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .activities .header-card {
+    max-width: 200px;
+  }
+  .activities .header-card__button {
+    padding: 0.7em 0 0.3em;
+    font-size: 0.9rem;
+  }
+  .activities-card {
+    min-height: 200px;
+    max-width: 190px;
+  }
+  .activities-card__title {
+    font-size: 0.7rem;
+  }
+  .activities-card__text p:first-of-type {
+    font-size: 2rem;
+  }
+  .activities-card__text p:last-of-type {
+    font-size: 0.7rem;
+    margin-bottom: 1em;
+  }
+}/*# sourceMappingURL=main.css.map */
