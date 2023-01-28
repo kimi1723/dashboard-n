@@ -28,7 +28,8 @@ body {
 .header-card {
 	position: relative;
 	min-height: 160px;
-	width: clamp(230px, 100%, 320px);
+	min-width: 230px;
+	width: 100%;
 	background-color: $card-bg;
 	border-radius: 12px;
 
@@ -140,7 +141,8 @@ body {
 		position: relative;
 		margin-top: 1em;
 		min-height: 160px;
-		width: clamp(230px, 100%, 320px);
+		min-width: 230px;	
+		width: 100%;
 		border-radius: 12px;
 		background-repeat: no-repeat;
 		background-position: 95% -5%;
@@ -223,6 +225,66 @@ body {
 	}
 }
 
+@media (min-width: 576px) {
+
+	.activities {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1em 1.5em;
+		padding: 0 2em;
+
+		.header-card {
+			grid-column:  1 / 3;
+			width: 100%;
+			grid-row: 1 / 2;
+
+		&-body {
+			&__title {
+				font-size: 1rem;
+				justify-content: space-evenly;
+
+				p {
+					font-size: 2rem;
+					
+				}
+			}
+		}
+
+		&__time-periods {
+			display: flex;
+			justify-content: space-around;
+		}
+		&__button {
+			font-size: 1.2rem;
+		}
+		}
+
+		&-card {
+			&:nth-of-type(1),
+			&:nth-of-type(2) {
+				grid-row: 2 / 3;
+			}
+
+			&:nth-of-type(3),
+			&:nth-of-type(4) {
+				grid-row: 3 / 4;
+			}
+
+			&:nth-of-type(5),
+			&:nth-of-type(6) {
+				grid-row: 4 / 5;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.activities {
+		padding: 0 4em;
+	}
+}
+
 @media (min-width: 996px) {
 	body {
 		padding: 0 7em;
@@ -233,11 +295,12 @@ body {
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: 1fr 1fr;
 		gap: 1.5em;
+		padding: 0;
 
 		.header-card {
 			grid-row: 1 / 3;
+			grid-column: 1 / 2;
 			height: 100%;
-			width: 100%;
 			min-width: 220px;
 			
 
@@ -248,9 +311,11 @@ body {
 					flex-direction: column;
 					align-items: flex-start;
 					justify-content: space-evenly;
+				
 				}
 
 				&__title {
+					font-size: 1rem;
 					padding-bottom: 2em;
 
 					p {
@@ -357,7 +422,7 @@ body {
 	
 			&-card {
 				min-height: 200px;
-				max-width: 190px;
+
 
 				&__title {
 					font-size: 0.7rem;
